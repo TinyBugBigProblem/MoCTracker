@@ -6,6 +6,8 @@ import HomePage from "./HomePage";
 import SearchPage from "./SearchPage";
 import RegisterPage from "./RegisterPage";
 
+const loggedIn = React.createContext('flase');
+
 // Uses material-ui to provide mateirla design components
 class App extends Component {
     componentDidMount() {
@@ -19,17 +21,22 @@ class App extends Component {
                     <div className="App-header">
                         {/* This is where the title goes */}
                         <h1 className="headerTitle">MoC tracker</h1>
-                        {/* This is where the navigation list will go*/}
-                        <div className="headerList">
-                            <ul>
-                                <li ><NavLink to="/">Home</NavLink></li>
-                                <li ><NavLink to="/Login">Login</NavLink></li>
-                                <li ><NavLink to="/SearchPage">Search</NavLink></li>
-                                <li ><NavLink to="/RegisterPage">Register</NavLink></li>
-                            </ul>
-                        </div>
                     </div>
-                    <div className="App-transition"></div>
+                    <div>
+                        <img className="imagel" alt="senate" src="senate.png"/>
+                    </div>
+                    <div>
+                        <img className="imager" alt="hor" src="./hor.png"/>
+                    </div>
+                    {/* This is where the navigation list will go*/}
+                    <div className="headerList">
+                        <ul>
+                            <li ><NavLink to="/">Home</NavLink></li>
+                            <li ><NavLink to="/Login">Login</NavLink></li>
+                            <li ><NavLink to="/SearchPage">Search</NavLink></li>
+                            <li ><NavLink to="/RegisterPage">Register</NavLink></li>
+                        </ul>
+                    </div>
                     <div className="App-body">
                         <Route exact path="/" component={HomePage}/>
                         <Route exact path="/Login" component={Login}/>

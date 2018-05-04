@@ -42,10 +42,9 @@ class HomePage extends Component {
                         </p>
                     </div>
 
-                    {/* Short list of recent events - three columns*/}
                     <div className="recentEvents">
                         {/* Recent Nominations*/}
-                        <div className="nominations">
+                        {/*<div className="nominations">
                             <h4>Recent Nominations</h4>
                             <table className="table">
                                 <tr>
@@ -59,7 +58,7 @@ class HomePage extends Component {
                                 </tr>
                              )}
                             </table>
-                        </div>
+                        </div>*/}
 
                         {/* Recent Bills*/}
                         <div className="bills">
@@ -78,7 +77,7 @@ class HomePage extends Component {
                             </table>
                         </div>
 
-                        {/* Recent treaties*/}
+                         {/*Recent treaties
                         <div className="treaties">
                             <h4>Recent Treaties</h4>
                             <table className="table">
@@ -95,7 +94,7 @@ class HomePage extends Component {
                                     )}
                                 </tbody>
                             </table>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
         );

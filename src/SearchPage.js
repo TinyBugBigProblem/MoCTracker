@@ -42,12 +42,22 @@ class LegislationSearchPage extends Component {
         }
     }
 
+    deleteEntry = (entry) => {
+        alert("hi");
+    }
+
+    editEntry = (entry) => {
+
+    }
+
     displayResults = () => {
         if(this.state.searchType === "1"){
             return(
             <table className="table">
                 <tbody>
                     <tr>
+                        <th>Delete</th>
+                        <th>Edit</th>
                         <th>Legislation</th>
                         <th>Title</th>
                         <th>Amends Bill</th>
@@ -58,6 +68,12 @@ class LegislationSearchPage extends Component {
                     </tr>
                     {this.state.results.map((result) =>
                     <tr key={result.id}>
+                        <td className="Delete" onClick={this.deleteEntry(result.legislation)}>
+                            Delete
+                        </td>
+                        <td className="Edit" onClick={this.editEntry(result.legislation)}>
+                            Edit
+                        </td>
                         <td>
                             {result.legislation}
                         </td>
@@ -133,7 +149,7 @@ class LegislationSearchPage extends Component {
                         Search:
                         <input value={this.state.searchQuery} onChange={this.updateQuery}/>
                     </label>
-                    <label className="half-col">
+                    {/*<label className="half-col">
                         Search Type:
                         <div className="radio">
                             Legislation<input type="radio" name="type"
@@ -143,7 +159,7 @@ class LegislationSearchPage extends Component {
                             Members<input type="radio" name="type"
                                value="2" checked={this.state.searchType === "2"} onChange={this.updateType}/>
                         </div>
-                    </label>
+                    </label>*/}
                 </form>
 
                 {/* Results Box */}

@@ -11,7 +11,7 @@ class RegisterPage extends Component {
         };
     }
 
-    verifyInput = () => {
+    verifyInput = async () => {
         // Check if all fields have data in them
         if(this.state.userName === "" ||
            this.state.userPass === "" ||
@@ -20,6 +20,15 @@ class RegisterPage extends Component {
         }
 
         // Send request to database to see if valid fields
+        
+         await fetch("http://localhost:3001/register.php", {
+             method: "post",
+             body: JSON.stringify({
+                 user: this.state.userName,
+                 pass: this.state.userPass,
+                 email: this.state.userEmail
+             })
+         });
     }
 
     updateName= (e) => {
@@ -57,12 +66,12 @@ class RegisterPage extends Component {
                         {/* Field of password*/}
                         <label className="half-col">
                             Password:
-                            <input value={this.state.userPass} onChange={this.updateName}/>
+                            <input value={this.state.userPass} onChange={this.updatePass}/>
                         </label>
                         {/* Field for email */}
                         <label className="half-col">
                             Email:
-                            <input value={this.state.userEmail} onChange={this.updateName}/>
+                            <input value={this.state.userEmail} onChange={this.updateEmail}/>
                         </label>
                     </form>
                     <button type="button" className="registerButton" onClick={() => this.verifyInput()}>Submit</button>
