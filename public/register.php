@@ -7,30 +7,27 @@
     $pass = "Cartman#3";
     $db   = "narodits_final_project";
 
-    $username = "DennisPlop";
-    $password = "123456";
-    $email = "narodits@usc.edu";
     // // Check username
-    // if(isset($_POST["user"]) || !empty($_POST["user"]){
-    //     $username = $_POST["user"];
-    // }
-    // else{
-    //     echo -1;
-    // }
-    // // Check password
-    // if(isset($_POST["pass"]) || !empty($_POST["pass"]){
-    //     $password = $_POST["pass"];    
-    // }
-    // else{
-    //     echo -1;
-    // }
-    // // Check email
-    // if(isset($_POST["email"]) || !empty($_POST["email"]){
-    //     $username = $_POST["email"];    
-    // }
-    // else{
-    //     echo -1;
-    // }
+    if(isset($_GET["user"]) || !empty($_GET["user"])){
+        $username = $_GET["user"];
+    }
+    else{
+        echo -1;
+    }
+    // Check password
+    if(isset($_GET["pass"]) || !empty($_GET["pass"])){
+        $password = $_GET["pass"];    
+    }
+    else{
+        echo -1;
+    }
+    // Check email
+    if(isset($_GET["email"]) || !empty($_GET["email"])){
+        $email = $_GET["email"];    
+    }
+    else{
+        echo -1;
+    }
     // If all checks pass then procede to call database
     $mysqli = new mysqli($host, $user, $pass, $db);
     if (mysqli_error($mysqli)){

@@ -11,7 +11,7 @@ const loggedIn = React.createContext('flase');
 // Uses material-ui to provide mateirla design components
 class App extends Component {
     componentDidMount() {
-        document.title = "MoC Tracker";
+        document.title = "Le Tracker";
     }
     render() {
         return (
@@ -20,7 +20,7 @@ class App extends Component {
                     {/* This is the header of the app */}
                     <div className="App-header">
                         {/* This is where the title goes */}
-                        <h1 className="headerTitle">MoC tracker</h1>
+                        <h1 className="headerTitle">Le tracker</h1>
                     </div>
                     <div>
                         <img className="imagel" alt="senate" src="senate.png"/>

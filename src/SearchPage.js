@@ -43,7 +43,7 @@ class LegislationSearchPage extends Component {
     }
 
     deleteEntry = (entry) => {
-        alert("hi");
+
     }
 
     editEntry = (entry) => {

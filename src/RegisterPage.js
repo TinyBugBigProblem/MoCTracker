@@ -10,7 +10,27 @@ class RegisterPage extends Component {
             userEmail: "",
         };
     }
+    // componentDidMount() {
+    //     // Check if all fields have data in them
+    //     if(this.state.userName === "" ||
+    //        this.state.userPass === "" ||
+    //        this.state.userEmail=== ""){
+    //         alert("Please complete all fields");
+    //     }
 
+    //     // Send request to database to see if valid fields
+    //     var get = "?user=" + this.state.userName + "&pass=" + this.state.userPass + "&email=" + this.state.userEmail;
+  
+    //     var request = new XMLHttpRequest();
+
+    //     request.onreadystatechange = function(e){
+    //         if(request.readyState === 4 && request.status === 200){
+    //             alert("good");
+    //         }
+    //     }
+    //     request.open('GET', "http://303.itpwebdev.com/~narodits/final/register.php" + get, true);
+    //     request.send();
+    // }
     verifyInput = async () => {
         // Check if all fields have data in them
         if(this.state.userName === "" ||
@@ -20,14 +40,13 @@ class RegisterPage extends Component {
         }
 
         // Send request to database to see if valid fields
-        
-         await fetch("http://localhost:3001/register.php", {
-             method: "post",
-             body: JSON.stringify({
-                 user: this.state.userName,
-                 pass: this.state.userPass,
-                 email: this.state.userEmail
-             })
+        var get = "?user=" + this.state.userName + "&pass=" + this.state.userPass + "&email=" + this.state.userEmail;
+         await fetch("http://303.itpwebdev.com/~narodits/final/register.php" + get, {
+             method: "GET",
+             headers: {'Content-Type':'application/json'},
+             mode: 'no-cors',
+         }).then((response) => {
+                alert("Success!");
          });
     }
 
